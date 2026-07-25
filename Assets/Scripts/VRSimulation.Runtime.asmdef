@@ -1,0 +1,22 @@
+{
+  "name": "VRSimulation.Runtime",
+  "rootNamespace": "VRSimulation",
+  "references": [
+    "VRSimulation.Core",
+    "Unity.XR.Interaction.Toolkit",
+    "Unity.XR.CoreUtils",
+    "Unity.InputSystem",
+    "Unity.TextMeshPro",
+    "Unity.XR.Management",
+    "Unity.RenderPipelines.Universal.Runtime"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

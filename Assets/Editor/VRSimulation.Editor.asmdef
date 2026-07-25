@@ -1,0 +1,25 @@
+{
+  "name": "VRSimulation.Editor",
+  "rootNamespace": "VRSimulation.EditorTools",
+  "references": [
+    "VRSimulation.Core",
+    "VRSimulation.Runtime",
+    "Unity.XR.Interaction.Toolkit",
+    "Unity.XR.CoreUtils",
+    "Unity.InputSystem",
+    "Unity.TextMeshPro",
+    "Unity.XR.Management",
+    "Unity.RenderPipelines.Universal.Runtime"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

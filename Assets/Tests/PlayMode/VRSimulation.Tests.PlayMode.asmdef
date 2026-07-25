@@ -1,0 +1,27 @@
+{
+  "name": "VRSimulation.Tests.PlayMode",
+  "rootNamespace": "VRSimulation.Tests.PlayMode",
+  "references": [
+    "VRSimulation.Core",
+    "VRSimulation.Runtime",
+    "Unity.XR.CoreUtils",
+    "UnityEngine.TestRunner",
+    "UnityEditor.TestRunner",
+    "Unity.XR.Interaction.Toolkit",
+    "Unity.InputSystem",
+    "Unity.TextMeshPro"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "nunit.framework.dll"
+  ],
+  "autoReferenced": false,
+  "defineConstraints": [
+    "UNITY_INCLUDE_TESTS"
+  ],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
