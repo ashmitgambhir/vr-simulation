@@ -120,9 +120,11 @@ namespace VRSimulation.EditorTools.Build
             RenderSettings.fogMode = FogMode.ExponentialSquared;
             RenderSettings.fogColor = EnvironmentBase;
 
-            // Light fog, per TRD 17. Enough to fade the floor into the dark at the room's edge so
-            // it has no visible boundary, without hazing objects within arm's reach.
-            RenderSettings.fogDensity = 0.035f;
+            // Fog density is tuned against the floor extent below: it must be dense enough that the
+            // floor's outer edge is fully absorbed into black before the player can see it, so the
+            // room reads as unbounded darkness rather than as a plane floating in a void. Raising
+            // the floor size without raising this value reveals the edge and destroys the effect.
+            RenderSettings.fogDensity = 0.08f;
 
             RenderSettings.skybox = null;
         }
@@ -208,9 +210,14 @@ namespace VRSimulation.EditorTools.Build
             Material ringMaterial = CreateMaterial(
                 "M_AccentRing", UnlitShader, AccentBlue);
 
+            // A Unity Plane is 10 by 10 units at unit scale, so this is a 14 metre floor. Sized
+            // against the fog rather than arbitrarily: large enough that the player never reaches
+            // an edge, small enough that the fog swallows that edge before it becomes visible. An
+            // earlier version used a 40 metre floor, which left the platform reading as a small
+            // disc lost in a large empty field instead of the PRD's single lit object in the dark.
             GameObject floor = CreatePrimitive(
                 PrimitiveType.Plane, "Floor", environment.transform,
-                position: Vector3.zero, scale: new Vector3(4f, 1f, 4f), material: floorMaterial);
+                position: Vector3.zero, scale: new Vector3(1.4f, 1f, 1.4f), material: floorMaterial);
 
             // The floor is the one surface the player is always standing on, so it is the one that
             // most needs to receive shadows and least needs to cast them.
